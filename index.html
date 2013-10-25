@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./ext.js"></script>
+<script src="./lib/CSInterface-4.0.0.js"></script>
+
+<link id="ppstyle" rel="stylesheet" type="text/css" href="./style.css">
+<title>example</title>
+</head>
+
+<body onLoad="onLoaded()">
+  <div id="content">
+    <ul>
+      <li>
+        <button id="new-doc">Create New document</button>
+        <button onClick="__adobe_cep__.showDevTools()">Show DevTools</button>
+      </li>
+    </ul>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+
+     $(function(){
+        $("#new-doc").on("click",function(e) {
+          docName = 'myDocument';
+          exec = 'documents.add(800, 500, 72, "' + docName +'")';
+          evalScript(exec);
+        });
+      });
+
+   </script>
+</body>
+</html>
